@@ -41,10 +41,20 @@
 
           src = lib.cleanSource ./.;
           nativeBuildInputs = [
+            # Dioxus CLI
             pkgs.dioxus-cli
+
+            # Dioxus web dependencies
+            pkgs.wasm-bindgen-cli_0_2_100
+            pkgs.lld
+
+            # Rust Compiler
             pkgs.cargo
             pkgs.rustc
             pkgs.pkg-config
+
+            # LSP
+            pkgs.nil
           ];
           buildInputs = lib.optionals pkgs.stdenv.isLinux [
             pkgs.gtk3
