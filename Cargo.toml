@@ -1,5 +1,5 @@
 [package]
-name = "hoge"
+name = "hobby_counter"
 version = "0.1.0"
 authors = ["haruki7049 <tontonkirikiri@gmail.com>"]
 edition = "2021"
