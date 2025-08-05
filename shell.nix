@@ -1,5 +1,7 @@
 {
   pkgs ? import <nixpkgs> { },
+  lib ? pkgs.lib,
+  stdenv ? pkgs.stdenv,
 }:
 
 pkgs.mkShell {
@@ -10,7 +12,7 @@ pkgs.mkShell {
     pkgs.pkg-config
   ];
 
-  buildInputs = [
+  buildInputs = lib.optionals stdenv.isLinux [
     pkgs.gtk3
     pkgs.cairo
     pkgs.pango
