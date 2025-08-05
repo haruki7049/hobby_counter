@@ -68,25 +68,29 @@
             strictDeps = true;
             doCheck = true;
 
-            installPhaseCommand = if pkgs.stdenv.isLinux then ''
-              # Build
-              dx build --release --platform=desktop
+            installPhaseCommand =
+              if pkgs.stdenv.isLinux then
+                ''
+                  # Build
+                  dx build --release --platform=desktop
 
-              # Install
-              mkdir -p $out/share/hobby_counter
-              cp -r target/dx/hobby_counter/release/linux/app/* $out/share/hobby_counter
+                  # Install
+                  mkdir -p $out/share/hobby_counter
+                  cp -r target/dx/hobby_counter/release/linux/app/* $out/share/hobby_counter
 
-              # Create a symlink
-              mkdir -p $out/bin
-              ln -s $out/share/hobby_counter/hobby_counter $out/bin/hobby_counter
-            '' else ''
-              # Build
-              dx build --release --platform=desktop
+                  # Create a symlink
+                  mkdir -p $out/bin
+                  ln -s $out/share/hobby_counter/hobby_counter $out/bin/hobby_counter
+                ''
+              else
+                ''
+                  # Build
+                  dx build --release --platform=desktop
 
-              # Install
-              mkdir -p $out/Applications
-              cp -r target/dx/hobby_counter/release/macos/HobbyCounter.app $out/Applications
-            '';
+                  # Install
+                  mkdir -p $out/Applications
+                  cp -r target/dx/hobby_counter/release/macos/HobbyCounter.app $out/Applications
+                '';
 
             meta = {
               licenses = [ lib.licenses.mit ];

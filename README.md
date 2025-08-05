@@ -1,4 +1,4 @@
-# hobby\_counter
+# hobby_counter
 
 ```sh
 dx build

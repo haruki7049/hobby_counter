@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use tracing::{info, Level};
+use tracing::{Level, info};
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
