@@ -40,16 +40,16 @@ rustPlatform.buildRustPackage {
   installPhase =
     if stdenv.isLinux then
       ''
-        mkdir -p $out/share/hoge
-        cp -r target/dx/hoge/release/linux/app/* $out/share/hoge
+        mkdir -p $out/share/hobby_counter
+        cp -r target/dx/hobby_counter/release/linux/app/* $out/share/hobby_counter
 
         mkdir -p $out/bin
-        ln -s $out/share/hoge/hoge $out/bin/hoge
+        ln -s $out/share/hobby_counter/hobby_counter $out/bin/hobby_counter
       ''
     else
       ''
         mkdir -p $out/Applications
-        cp -r target/dx/hoge/release/macos/Hoge.app $out/Applications
+        cp -r target/dx/hobby_counter/release/macos/Hoge.app $out/Applications
       '';
 
   meta = {
