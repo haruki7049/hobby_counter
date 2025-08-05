@@ -15,7 +15,7 @@
 }:
 
 rustPlatform.buildRustPackage {
-  name = "hoge";
+  name = "hobby_counter";
   src = lib.cleanSource ./.;
   cargoLock.lockFile = ./Cargo.lock;
 
