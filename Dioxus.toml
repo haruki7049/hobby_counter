@@ -3,7 +3,7 @@
 [web.app]
 
 # HTML title tag content
-title = "hobby_counter"
+title = "HobbyCounter"
 
 # include `assets` in web platform
 [web.resource]
@@ -19,3 +19,7 @@ script = []
 # Javascript code file
 # serve: [dev-server] only
 script = []
+
+[bundle]
+identifier = "dev.haruki7049.HobbyCounter"
+publisher = "haruki7049 <tontonkirikiri@gmail.com>"
