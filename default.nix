@@ -49,7 +49,7 @@ rustPlatform.buildRustPackage {
     else
       ''
         mkdir -p $out/Applications
-        cp -r target/dx/hobby_counter/release/macos/Hoge.app $out/Applications
+        cp -r target/dx/hobby_counter/release/macos/HobbyCounter.app $out/Applications
       '';
 
   meta = {
